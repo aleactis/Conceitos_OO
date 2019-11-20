@@ -9,9 +9,33 @@ namespace Conceitos_OO
 {
     class Item
     {
-        public string NomeItem;
-        public double ValorItem;
-        public int QuantidadeItem;
+        private string nomeItem;
+        private double valorItem;
+        private int quantidadeItem;
+
+        public string NomeItem { get => nomeItem; set => nomeItem = value; }
+        public double ValorItem { get => valorItem; set => valorItem = value; }
+        public int QuantidadeItem { get => quantidadeItem; set => quantidadeItem = value; }
+
+        public Item(string nomeItem, double valorItem, int quantidadeItem)
+        {
+            NomeItem = nomeItem;
+            ValorItem = valorItem;
+            QuantidadeItem = quantidadeItem;
+        }
+
+        public Item(string nomeItem, double valorItem)
+        {
+            NomeItem = nomeItem;
+            ValorItem = valorItem;
+        }
+
+        public Item(string nomeItem)
+        {
+            NomeItem = nomeItem;
+        }
+
+        public Item() { }
 
         public double AtualizaInventario()
         {
@@ -28,6 +52,7 @@ namespace Conceitos_OO
             QuantidadeItem -= quantidade;
         }
 
+        //Sobrescrita do método ToString()
         public override string ToString()
         {
             return NomeItem
